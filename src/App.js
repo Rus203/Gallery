@@ -13,10 +13,11 @@ const Container = styled.div`
 
 const Main = styled.div`
   flex: 7;
+  background-color: #f9f9f9;
 `
 
 const Wrapper = styled.div`
-color: black;
+padding: 20px 50px;
 `
 
 function App () {

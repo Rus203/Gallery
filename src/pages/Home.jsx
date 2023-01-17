@@ -6,9 +6,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  background-color: #F5F5F5;
-  cursor: pointer;
-  row-gap: 0px;
+  row-gap: 30px;
 `
 
 const Home = () => {

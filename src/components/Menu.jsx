@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 import { FaYoutube as YoutubeIcon } from 'react-icons/fa'
 import { IoSettingsOutline as SettingsIcon } from 'react-icons/io5'
@@ -46,10 +47,14 @@ const Menu = () => {
   return (
     <Container>
       <Wrapper>
-        <Logo>
-          <YoutubeIcon />
-            RusTube
-        </Logo>
+        <Link
+          to="/"
+          style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Logo>
+            <YoutubeIcon />
+              RusTube
+          </Logo>
+        </Link>
         <Item>
           <HomeIcon />
           Home
