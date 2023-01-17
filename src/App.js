@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
+import Home from './pages/Home'
+import Video from './pages/Video'
 import Menu from './components/Menu'
 import Navbar from './components/Navbar'
 
@@ -9,22 +12,32 @@ const Container = styled.div`
 `
 
 const Main = styled.div`
-  flex: 7
+  flex: 7;
 `
 
 const Wrapper = styled.div`
+color: black;
 `
 
 function App () {
   return (
     <Container>
-      <Menu />
-      <Main>
-        <Navbar />
-        <Wrapper>
-          video cards
-        </Wrapper>
-      </Main>
+      <BrowserRouter>
+        <Menu />
+        <Main>
+          <Navbar />
+          <Wrapper>
+            <Routes>
+              <Route path='/'>
+                <Route index element={<Home />} />
+                <Route path='video'>
+                  <Route path=':id' element={<Video />}/>
+                </Route>
+              </Route>
+            </Routes>
+          </Wrapper>
+        </Main>
+      </BrowserRouter>
     </Container>
   )
 }
