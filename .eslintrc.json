@@ -17,7 +17,7 @@
         "react"
     ],
     "rules": {
-        "max-len": [ "warn", { "code": 80 } ],
+        "max-len": [ "warn", { "code": 80, "ignoreUrls": true } ],
         "no-unused-vars": "error"
     }
 }
