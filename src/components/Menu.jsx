@@ -7,7 +7,6 @@ import { IoSettingsOutline as SettingsIcon } from 'react-icons/io5'
 import { RiFeedbackLine as FeedbackIcon } from 'react-icons/ri'
 import { FiHelpCircle as HelpIcon } from 'react-icons/fi'
 import { AiOutlineHome as HomeIcon } from 'react-icons/ai'
-import { BiLike as LikeIcon } from 'react-icons/bi'
 import { MdOutlineSubscriptions as Subscriptions } from 'react-icons/md'
 
 const Container = styled.div`
@@ -23,7 +22,7 @@ const Container = styled.div`
 `
 
 const Wrapper = styled.div`
-  padding: 20px 30px;
+  padding: 20px 35px;
 `
 
 const Logo = styled.div`
@@ -33,15 +32,21 @@ const Logo = styled.div`
   column-gap: 5px;
   font-size: 24px;
   margin-bottom: 25px;
-  `
+`
 
 const Item = styled.div`
   display: flex;
   align-items: center;
-  column-gap: 5px;
+  column-gap: 10px;
   cursor: pointer;
-  padding: 8px 0;
-  `
+  padding: 8px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #373737;
+    scale: 1.1;
+  }
+`
 
 const Menu = () => {
   return (
@@ -74,10 +79,6 @@ const Menu = () => {
         <Item>
           <HelpIcon />
           Help
-        </Item>
-        <Item>
-          <LikeIcon />
-          Likes
         </Item>
       </Wrapper>
     </Container>
