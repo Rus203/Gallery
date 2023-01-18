@@ -43,8 +43,12 @@ const Item = styled.div`
   cursor: pointer;
 
   &:hover {
-    background-color: #373737;
+    color: yellow;
     scale: 1.1;
+  }
+
+  &:active {
+    scale: 1.05;
   }
 `
 
