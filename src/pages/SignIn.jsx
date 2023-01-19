@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
   display: flex;
@@ -36,7 +37,6 @@ const Title = styled.h1`
 `
 
 const Button = styled.button`
-  align-self: flex-start;
   border-radius: 5px;
   height: 40px;
   background-color: black;
@@ -80,7 +80,9 @@ const SignIn = () => {
         <Input type='password' placeholder='Password' />
         <Buttons>
           <Button>Sign In</Button>
-          <SignUpButton>Sing Up</SignUpButton>
+          <Link to='/signUp' style={{ textDecoration: 'none' }} >
+            <SignUpButton>Sing Up</SignUpButton>
+          </Link>
         </Buttons>
       </Wrapper>
     </Container>
