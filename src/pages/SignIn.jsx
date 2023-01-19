@@ -44,13 +44,11 @@ const Button = styled.button`
   padding: 5px 15px;
   border: none;
   line-height: 30px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   display: flex;
   align-items: center;
-  column-gap: 7px;
   cursor: pointer;
-  margin-top: 220px;
 
   &:hover {
     scale: 1.05;
@@ -70,6 +68,7 @@ const Buttons = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  column-gap: 10px;
 `
 
 const SignIn = () => {

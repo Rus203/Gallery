@@ -46,7 +46,11 @@ const Details = styled.div`
 
 const Info = styled.span`
   font-size: 14px;
-  color: "#f5f5f5"
+  align-self: center;
+
+  @media (max-width: 424px) {
+    align-self: flex-start;
+  }
 `
 
 const Buttons = styled.div`
@@ -68,6 +72,7 @@ const Button = styled.button`
   align-items: center;
   column-gap: 7px;
   cursor: pointer;
+  width: 100px;
 
   &:hover {
     background-color: #E5E5E5;
@@ -101,6 +106,7 @@ const LikeButton = styled(Button)`
 
 const DisLikeButton = styled(Button)`
   border-radius: 0 20px 20px 0;
+  width: 50%;
 `
 
 const RateButtons = styled.div`
@@ -117,7 +123,7 @@ const Video = () => {
         <VideoWrapper>
           <iframe
             width="100%"
-            height='400'
+            height={350}
             src="https://www.youtube-nocookie.com/embed/JA8Xw0ffel8?controls=0"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media;

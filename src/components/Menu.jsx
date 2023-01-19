@@ -18,7 +18,6 @@ const Container = styled.div`
   font-weight: 500;
   top: 0;
 
-
   @media (max-width: 1023px) {
     position: ${({ isBurger }) => isBurger && 'absolute'};
     display: ${({ isBurger }) => isBurger ? 'block' : 'none'};

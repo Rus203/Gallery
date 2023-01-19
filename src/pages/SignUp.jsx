@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   padding: 20px 40px;
   gap: 10px;
   border: 1px solid gray;
-  height: 220px;
+  height: 250px;
   background-color: #eae9e9;
 `
 
@@ -44,11 +44,8 @@ const Button = styled.button`
   padding: 5px 15px;
   border: none;
   line-height: 30px;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
-  display: flex;
-  align-items: center;
-  column-gap: 7px;
   cursor: pointer;
   margin-top: 20px;
 

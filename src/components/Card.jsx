@@ -29,11 +29,6 @@ const Details = styled.div`
   display: flex;
   gap: 12px;
   margin-top: ${({ type }) => type !== 'sm' && '15px'};
-  flex: 1;
-
-  @media (max-width: 1023px) {
-    font-size: 13px;
-  }
 `
 
 const ChannelImage = styled.img`
@@ -58,7 +53,7 @@ const ChanelName = styled.h2`
 `
 const Info = styled.div`
   font-size: 0.8em;
-  color: "#f5f5f5";
+  align-self: flex-start;
 `
 const Card = ({ type }) => {
   return (
