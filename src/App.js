@@ -6,6 +6,8 @@ import Home from './pages/Home'
 import Video from './pages/Video'
 import Menu from './components/Menu'
 import Navbar from './components/Navbar'
+import SignIn from './pages/SignIn'
+import SignUp from './pages/SignUp'
 
 const Container = styled.div`
   display: flex;
@@ -34,6 +36,8 @@ function App () {
                 <Route path='video'>
                   <Route path=':id' element={<Video />}/>
                 </Route>
+                <Route path='signUp' element={<SignUp />} />
+                <Route path='signIn' element={<SignIn />} />
               </Route>
             </Routes>
           </Wrapper>

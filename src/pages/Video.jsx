@@ -64,6 +64,7 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   column-gap: 7px;
+  cursor: pointer;
 `
 
 const SubscribeButton = styled(Button)`
