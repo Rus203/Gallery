@@ -25,13 +25,19 @@ const Avatar = styled.img`
 const Name = styled.span`
   font-size: 13px;
   font-weight: 500;
+  margin-bottom: 15px;
 `
 const Input = styled.input`
   outline: none;
   border: none;
-  border-bottom: 1px solid black;
   width: 100%;
+  border-bottom: 1px solid #b3b2b2;
   background-color: inherit;
+  transition: all  .6s linear;
+
+  &:focus {
+    border-bottom: 1px solid black;
+  }
 `
 
 const Button = styled.button`
@@ -45,14 +51,32 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   column-gap: 7px;
+  cursor: pointer;
 `
 
 const CommentButton = styled(Button)`
   background-color: #1515e1;
   color: white;
+
+  &:hover {
+    background-color: #0653b8;
+  }
+
+  &:active {
+    background-color: #327ad8;
+  }
 `
 
 const CancelButton = styled(Button)`
+  background-color: transparent;
+
+  &:hover {
+    background-color: #e5e5e5;
+  }
+
+  &:active {
+    background-color: #dbdbdb;
+  }
 `
 
 const Buttons = styled.div`

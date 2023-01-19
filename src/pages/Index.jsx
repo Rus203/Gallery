@@ -4,9 +4,10 @@ import Card from '../components/Card'
 
 const Container = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  row-gap: 30px;
+  row-gap: 25px;
+  column-gap: 15px;
 `
 
 const Home = () => {

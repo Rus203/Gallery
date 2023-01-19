@@ -15,6 +15,10 @@ import {
 const Container = styled.div`
   display: flex;
   gap: 24px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
 `
 
 const Content = styled.div`
@@ -36,8 +40,8 @@ const Title = styled.h1`
 
 const Details = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  column-gap: 20px
 `
 
 const Info = styled.span`
@@ -47,7 +51,6 @@ const Info = styled.span`
 
 const Buttons = styled.div`
   display: flex;
-  justify-content: space-around;
   column-gap: 10px;
   row-gap: 10px;
   flex-wrap: wrap;
@@ -65,11 +68,28 @@ const Button = styled.button`
   align-items: center;
   column-gap: 7px;
   cursor: pointer;
+
+  &:hover {
+    background-color: #E5E5E5;
+  }
+
+  &:active {
+    background-color: #dcd8d8;
+  }
+
 `
 
 const SubscribeButton = styled(Button)`
   background-color: #000;
   color: #fff;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  &:active {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
 `
 
 const ShareButton = styled(Button)``
@@ -95,14 +115,14 @@ const Video = () => {
     <Container>
       <Content>
         <VideoWrapper>
-        <iframe
-          width="100%"
-          height="370"
-          src="https://www.youtube-nocookie.com/embed/JA8Xw0ffel8?controls=0"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-            gyroscope; picture-in-picture; web-share" allowFullScreen>
-        </iframe>
+          <iframe
+            width="100%"
+            height='400'
+            src="https://www.youtube-nocookie.com/embed/JA8Xw0ffel8?controls=0"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+              gyroscope; picture-in-picture; web-share" allowFullScreen>
+          </iframe>
         </VideoWrapper>
         <Title>Test video</Title>
         <Details>

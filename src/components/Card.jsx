@@ -4,17 +4,22 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 const Container = styled.div`
-  width: ${({ type }) => type !== 'sm' && '210px'};
+  width: ${({ type }) => type !== 'sm' && '230px'};
   cursor: pointer;
   color: black;
   display: ${({ type }) => type === 'sm' && 'flex'};
   margin-bottom: ${({ type }) => type === 'sm' && '10px'};
-  gap: 15px;
+  gap: 10px;
 `
 
 const Image = styled.img`
-  width: 100%;
-  height: ${({ type }) => type === 'sm' ? '70px' : '130px'};
+  @media (max-width: 767px) {
+    height: ${({ type }) => type === 'sm' ? '130px' : '130px'};
+    flex: 0;
+  }
+
+  width: 230px;
+  height: ${({ type }) => type === 'sm' ? '80px' : '130px'};
   background-color: #999;
   border-radius: 15px;
   flex: 1;
@@ -25,6 +30,10 @@ const Details = styled.div`
   gap: 12px;
   margin-top: ${({ type }) => type !== 'sm' && '15px'};
   flex: 1;
+
+  @media (max-width: 1023px) {
+    font-size: 13px;
+  }
 `
 
 const ChannelImage = styled.img`
@@ -37,17 +46,18 @@ const ChannelImage = styled.img`
 
 const Text = styled.div``
 const Title = styled.h1`
-  font-size: 16px;
+  font-size: 1em;
   font-weight: 500;
   margin: 0;
   `
 
 const ChanelName = styled.h2`
   font-size: 14px;
+  font-size: 0.85em;
   margin: 5px 0;
 `
 const Info = styled.div`
-  font-size: 13px;
+  font-size: 0.8em;
   color: "#f5f5f5";
 `
 const Card = ({ type }) => {

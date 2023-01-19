@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   padding: 20px 40px;
   gap: 10px;
   border: 1px solid gray;
-  height: 200px;
+  height: 220px;
   background-color: #eae9e9;
 `
 
@@ -50,6 +50,7 @@ const Button = styled.button`
   align-items: center;
   column-gap: 7px;
   cursor: pointer;
+  margin-top: 220px
 
   &:hover {
     scale: 1.05;

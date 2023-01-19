@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
@@ -10,19 +10,37 @@ import { AiOutlineHome as HomeIcon } from 'react-icons/ai'
 import { MdOutlineSubscriptions as Subscriptions } from 'react-icons/md'
 
 const Container = styled.div`
+  @media (max-width: 1023px) {
+    position: ${({ isBurger }) => isBurger && 'absolute'};
+    display: ${({ isBurger }) => isBurger ? 'block' : 'none'};
+    z-index: 1;
+    width: 100vw;
+    font-size: 1.3em;
+  }
+
   flex: 1;
   background-color: #202020;
   color: white;
   height: 100vh;
-  font-size: 20px;
-  color: white;
+  font-size: 1.3em;
   font-weight: 500;
-  position: sticky;
   top: 0;
+
+
+
+  @media (min-width: 1024px) {
+    position: sticky;
+  }
+  
 `
 
 const Wrapper = styled.div`
   padding: 20px 35px;
+
+  @media (max-width: 1023px) {
+    font-size: 1em;
+    padding: 20px 15px;
+  }
 `
 
 const Logo = styled.div`
@@ -30,7 +48,7 @@ const Logo = styled.div`
   align-items: center;
   font-weight: bold;
   column-gap: 10px;
-  font-size: 24px;
+  font-size: 1.5em; 
   margin-bottom: 25px;
 `
 
@@ -40,7 +58,6 @@ const Item = styled.div`
   column-gap: 10px;
   cursor: pointer;
   padding: 8px;
-  cursor: pointer;
   user-select: none;
 
   &:hover {
@@ -59,8 +76,9 @@ const ItemLink = styled(Link)`
 `
 
 const Menu = () => {
+  const [isBurger, setBurger] = useState(false)
   return (
-    <Container>
+    <Container isBurger={isBurger} >
       <Wrapper>
         <ItemLink to="/">
           <Logo>

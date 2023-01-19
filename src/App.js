@@ -17,15 +17,22 @@ import Whoops from './pages/Whoops'
 
 const Container = styled.div`
   display: flex;
+  margin: 0 auto;
+  
+  @media (min-width: 1440px) {
+    max-width: 1440px;
+    width: 100%
+  }
 `
 
 const Main = styled.div`
   flex: 7;
-  background-color: #f9f9f9;
+  background-color: #f9f9f9;  
 `
 
 const Wrapper = styled.div`
-padding: 20px 35px;
+  margin: 0 auto;
+  padding: 20px 25px;
 `
 
 function App () {

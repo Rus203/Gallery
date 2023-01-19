@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
+import { GiHamburgerMenu as HamburgerMenuIcon } from 'react-icons/gi'
+
 import {
   MdOutlineAccountCircle as AccountCircleIcon,
   MdOutlineSearch as SearchIcon
@@ -19,13 +21,12 @@ const Wrapper = styled.div`
   align-items: center;
   height: 100%;
   padding: 0 35px;
-  justify-content: flex-end;
+  justify-content: space-between;
   position: relative;
+  column-gap: 15px;
 `
 
 const Search = styled.div`
-  margin: auto;
-  position: absolute;
   left:0;
   right: 0;
   width: 50%;
@@ -55,12 +56,21 @@ const Button = styled.button`
   align-items: center;
   gap: 5px;
   font-size: 17px;
+  width: 110px;
 `
 
+const Burger = styled(HamburgerMenuIcon)`
+  font-size: 26px;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+`
 const Navbar = () => {
   return (
     <Container>
       <Wrapper>
+        <Burger />
         <Search>
           <Input placeholder='Search' />
           <SearchIcon />
