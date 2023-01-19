@@ -1,14 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Container = styled.div``
+const Container = styled.div`
+  
 
-const Home = () => {
+`
+const Feedback = () => {
   return (
     <Container>
-      Home
+        Feedback
     </Container>
   )
 }
 
-export default Home
+export default Feedback

@@ -14,7 +14,7 @@ const Container = styled.div`
 
 const Image = styled.img`
   width: 100%;
-  height: ${({ type }) => type === 'sm' ? '75px' : '130px'};
+  height: ${({ type }) => type === 'sm' ? '70px' : '130px'};
   background-color: #999;
   border-radius: 15px;
   flex: 1;

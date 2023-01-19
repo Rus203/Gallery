@@ -3,12 +3,12 @@ import styled from 'styled-components'
 
 const Container = styled.div``
 
-const Home = () => {
+const Help = () => {
   return (
     <Container>
-      Home
+      Help
     </Container>
   )
 }
 
-export default Home
+export default Help

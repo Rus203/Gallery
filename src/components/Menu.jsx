@@ -29,7 +29,7 @@ const Logo = styled.div`
   display: flex;
   align-items: center;
   font-weight: bold;
-  column-gap: 5px;
+  column-gap: 10px;
   font-size: 24px;
   margin-bottom: 25px;
 `
@@ -41,6 +41,7 @@ const Item = styled.div`
   cursor: pointer;
   padding: 8px;
   cursor: pointer;
+  user-select: none;
 
   &:hover {
     color: yellow;
@@ -52,38 +53,51 @@ const Item = styled.div`
   }
 `
 
+const ItemLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+`
+
 const Menu = () => {
   return (
     <Container>
       <Wrapper>
-        <Link
-          to="/"
-          style={{ textDecoration: 'none', color: 'inherit' }}>
+        <ItemLink to="/">
           <Logo>
             <YoutubeIcon />
-              RusTube
+              Gallery
           </Logo>
-        </Link>
-        <Item>
-          <HomeIcon />
-          Home
+        </ItemLink>
+        <ItemLink to='home'>
+          <Item>
+            <HomeIcon />
+            Home
+          </Item>
+        </ItemLink>
+        <ItemLink to='/subscriptions'>
+          <Item>
+            <Subscriptions />
+            Subscriptions
+          </Item>
+        </ItemLink>
+        <ItemLink to='/settings'>
+          <Item>
+            <SettingsIcon />
+            Settings
+          </Item>
+        </ItemLink>
+        <ItemLink to="/feedback">
+          <Item>
+            <FeedbackIcon />
+            Feedback
+          </Item>
+        </ItemLink>
+        <ItemLink to="/help">
+          <Item>
+            <HelpIcon />
+            Help
         </Item>
-        <Item>
-          <Subscriptions />
-          Subscriptions
-        </Item>
-        <Item>
-          <SettingsIcon />
-          Settings
-        </Item>
-        <Item>
-          <FeedbackIcon />
-          Feedback
-        </Item>
-        <Item>
-          <HelpIcon />
-          Help
-        </Item>
+        </ItemLink>
       </Wrapper>
     </Container>
   )

@@ -3,12 +3,10 @@ import styled from 'styled-components'
 
 const Container = styled.div``
 
-const Home = () => {
+const Settings = () => {
   return (
-    <Container>
-      Home
-    </Container>
+    <Container> Settings</Container>
   )
 }
 
-export default Home
+export default Settings
