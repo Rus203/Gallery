@@ -23,7 +23,7 @@ const Input = styled.input`
   border: none;
   border-bottom: 1px solid black;
   outline: none;
-  font-size: 14px;
+  font-size: 16px;
   width: 100%;
   background-color: transparent;
   padding: 5px 10px;
@@ -44,7 +44,7 @@ const Button = styled.button`
   padding: 5px 15px;
   border: none;
   line-height: 30px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   display: flex;
   align-items: center;

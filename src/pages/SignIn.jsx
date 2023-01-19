@@ -24,7 +24,7 @@ const Input = styled.input`
   border: none;
   border-bottom: 1px solid black;
   outline: none;
-  font-size: 14px;
+  font-size: 17px;
   width: 100%;
   background-color: transparent;
   padding: 5px 10px;
