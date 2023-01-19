@@ -10,14 +10,6 @@ import { AiOutlineHome as HomeIcon } from 'react-icons/ai'
 import { MdOutlineSubscriptions as Subscriptions } from 'react-icons/md'
 
 const Container = styled.div`
-  @media (max-width: 1023px) {
-    position: ${({ isBurger }) => isBurger && 'absolute'};
-    display: ${({ isBurger }) => isBurger ? 'block' : 'none'};
-    z-index: 1;
-    width: 100vw;
-    font-size: 1.3em;
-  }
-
   flex: 1;
   background-color: #202020;
   color: white;
@@ -27,7 +19,14 @@ const Container = styled.div`
   top: 0;
 
 
-
+  @media (max-width: 1023px) {
+    position: ${({ isBurger }) => isBurger && 'absolute'};
+    display: ${({ isBurger }) => isBurger ? 'block' : 'none'};
+    z-index: 1;
+    width: 100vw;
+    font-size: 1.3em;
+  }
+  
   @media (min-width: 1024px) {
     position: sticky;
   }

@@ -13,16 +13,16 @@ const Container = styled.div`
 `
 
 const Image = styled.img`
-  @media (max-width: 767px) {
-    height: ${({ type }) => type === 'sm' ? '130px' : '130px'};
-    flex: 0;
-  }
-
   width: 230px;
   height: ${({ type }) => type === 'sm' ? '80px' : '130px'};
   background-color: #999;
   border-radius: 15px;
   flex: 1;
+
+  @media (max-width: 767px) {
+    height: ${({ type }) => type === 'sm' ? '130px' : '130px'};
+    flex: 0.5;
+  }
 `
 
 const Details = styled.div`
