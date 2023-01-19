@@ -50,7 +50,7 @@ const Button = styled.button`
   align-items: center;
   column-gap: 7px;
   cursor: pointer;
-  margin-top: 220px
+  margin-top: 220px;
 
   &:hover {
     scale: 1.05;
