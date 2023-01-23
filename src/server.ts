@@ -1,14 +1,17 @@
 import * as express from 'express'
-import * as dotenv from 'dotenv'
 
-dotenv.config()
+import rootRoute from './routes'
+import { AppDataSource } from './database/data-source'
+
 const server: express.Application = express()
-const PORT: number = +(process.env.PORT ?? 8080)
+const PORT: number = +(process.env.PORT ?? 5000)
 
-server.get('/', (request, response) => {
-  response.json({ status: true, message: 'Our node.js app works' })
-})
+server.use('/api', rootRoute)
 
-server.listen(PORT, () => {
-  console.log(`Server is running: http://localhost:${PORT}/`)
-})
+AppDataSource.initialize()
+  .then(() => {
+    server.listen(PORT, () => {
+      console.log(`Server is running: http://localhost:${PORT}/`)
+    })
+  })
+  .catch(error => { console.log(error) })
