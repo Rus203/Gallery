@@ -1,6 +1,7 @@
 import {
   Entity, Column, OneToMany, OneToOne, JoinColumn,
-  PrimaryGeneratedColumn, BaseEntity
+  PrimaryGeneratedColumn, BaseEntity, CreateDateColumn,
+  UpdateDateColumn
 } from 'typeorm'
 import { IChannel } from '../interfaces/IChannel'
 import { Video } from './Video'
@@ -15,10 +16,10 @@ export class Channel extends BaseEntity implements IChannel {
   @Column({ type: 'varchar', unique: true })
     name: string
 
-  @Column({ type: 'date', name: 'created_at', nullable: true })
+  @CreateDateColumn({ name: 'created_at' })
     createdAt: Date
 
-  @Column({ type: 'date', name: 'updated_at', nullable: true })
+  @UpdateDateColumn({ name: 'updated_at' })
     updatedAt: Date
 
   @OneToMany(() => Video, video => video.channel)

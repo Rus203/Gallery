@@ -1,6 +1,6 @@
 import {
   Entity, Column, OneToOne, PrimaryGeneratedColumn,
-  BaseEntity
+  BaseEntity, CreateDateColumn, UpdateDateColumn
 } from 'typeorm'
 import { IUser } from '../interfaces/IUser'
 import { Channel } from './Channel'
@@ -19,10 +19,10 @@ export class User extends BaseEntity implements IUser {
   @Column({ type: 'varchar' })
     password: string
 
-  @Column({ type: 'date', name: 'created_at', nullable: true })
+  @CreateDateColumn({ name: 'created_at' })
     createdAt: Date
 
-  @Column({ type: 'date', name: 'updated_at', nullable: true })
+  @UpdateDateColumn({ name: 'updated_at' })
     updatedAt: Date
 
   @OneToOne(() => Channel, channel => channel.user)

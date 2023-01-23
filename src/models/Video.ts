@@ -1,5 +1,6 @@
 import {
   Entity, Column, ManyToOne, BaseEntity,
+  CreateDateColumn, UpdateDateColumn,
   OneToOne, JoinColumn, PrimaryGeneratedColumn
 } from 'typeorm'
 import { IVideo } from '../interfaces/IVideo'
@@ -14,10 +15,10 @@ export class Video extends BaseEntity implements IVideo {
   @Column({ type: 'varchar' })
     name: string
 
-  @Column({ type: 'date', name: 'created_at', nullable: true })
+  @CreateDateColumn({ name: 'created_at' })
     createdAt: Date
 
-  @Column({ type: 'date', name: 'updated_at', nullable: true })
+  @UpdateDateColumn({ name: 'updated_at' })
     updatedAt: Date
 
   @ManyToOne(() => Channel, channel => channel.videos)
