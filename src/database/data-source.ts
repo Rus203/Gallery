@@ -1,11 +1,11 @@
 import 'reflect-metadata'
 import { DataSource } from 'typeorm'
 
-import { AvatarPath } from '../models/AvatarPath'
-import { Channel } from '../models/Channel'
-import { User } from '../models/User'
-import { Video } from '../models/Video'
-import { VideoPath } from '../models/videoPath'
+import { User } from '../models/user.model'
+import { Video } from '../models/video.model'
+import { Comment } from '../models/comment.model'
+import { UserInfo } from '../models/user-info.model'
+import { VideoInfo } from '../models/video-info.model'
 
 import * as dotenv from 'dotenv'
 dotenv.config()
@@ -19,5 +19,5 @@ export const AppDataSource = new DataSource({
   database: process.env.DB_NAME,
   synchronize: true,
   logging: false,
-  entities: [AvatarPath, Channel, User, Video, VideoPath]
+  entities: [User, Video, Comment, UserInfo, VideoInfo]
 })

@@ -23,6 +23,7 @@
 },
 "rules": {
     "max-len": ["warn", { "code": 80, "ignoreUrls": true }],
-    "no-unused-vars": "warn" 
+    "no-unused-vars": "warn" ,
+    "@typescript-eslint/no-misused-promises": "off"
   }
 }
