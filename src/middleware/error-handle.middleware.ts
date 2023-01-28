@@ -7,9 +7,11 @@ export default function (error: IError,
   request: Request, response: Response, next: NextFunction): void {
   const answer = {
     status: error.status ?? StatusCodes.INTERNAL_SERVER_ERROR,
-    name: () => getReasonPhrase(this.status),
-    message: error.message
+    message: error.message,
+    success: false,
   }
+
+  answer['name'] = getReasonPhrase(answer.status)
 
   response.status(answer.status).send(answer)
 }
