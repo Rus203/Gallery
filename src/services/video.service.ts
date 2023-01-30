@@ -1,21 +1,23 @@
+import { Video } from '../models/video.model'
 import { videoRepository } from '../repositories/video.repository'
 import { IVideo } from '../interfaces/video.interface'
 
-class VideoServices {
-  async getOne (parameters: object): Promise<IVideo | null > {
-    return await videoRepository.getOne(parameters)
+class VideoService {
+  async getOne (parameters: object): Promise<Video | null> {
+    const videos: Video[] = await this.getAll(parameters)
+    return videos.length > 0 ? videos[0] : null
   }
 
-  async getAll (): Promise<IVideo[]> {
-    return await videoRepository.getAll()
+  async getAll (parameters: object): Promise<Video[]> {
+    return await videoRepository.get(parameters)
   }
 
-  async create (parameters: IVideo): Promise<void> {
-    await videoRepository.create(parameters)
+  async create (parameters: IVideo): Promise<Video> {
+    return await videoRepository.create(parameters)
   }
 
-  async update (parameters: IVideo, id: string): Promise<void> {
-    await videoRepository.update(parameters, id)
+  async update (id: string, parameters: object): Promise<void> {
+    await videoRepository.update(id, parameters)
   }
 
   async delete (id: string): Promise<void> {
@@ -23,4 +25,4 @@ class VideoServices {
   }
 }
 
-export const videoServices = new VideoServices()
+export const videoService = new VideoService()

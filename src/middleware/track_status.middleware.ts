@@ -6,6 +6,7 @@ export const trackStatus = (middleware: Function): any => {
     try {
       await middleware(request, response, next)
     } catch (error) {
+      console.log(error.stack)
       next(error)
     }
   }
