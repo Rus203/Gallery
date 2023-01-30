@@ -1,9 +1,8 @@
+import { User } from '../models/user.model'
+
 export interface IUserInfo {
-  id?: string
-  userId?: string
+  user: User
   description: string
-  imagePath: string
+  imagePath?: string
   name: string
-  createdAt?: Date
-  updatedAt?: Date
 }

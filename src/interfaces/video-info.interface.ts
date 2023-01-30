@@ -1,13 +1,11 @@
+import { Video } from '../models/video.model'
 import { Opinion } from '../utils/opinion.enum'
 
 export interface IVideoInfo {
-  id?: string
-  videoId?: string
+  video: Video
   title: string
   description: string
-  opinion: Opinion
-  views: number
-  tags: [string]
-  createdAt?: Date
-  updatedAt?: Date
+  opinion?: Opinion
+  views?: number
+  tags?: []
 }

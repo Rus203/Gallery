@@ -1,6 +1,7 @@
+import { User } from '../models/user.model'
+
 export interface IVideo {
-  id?: string
   path: string
-  imagePath: string
-  userId?: string
+  imagePath?: string
+  user: User
 }
