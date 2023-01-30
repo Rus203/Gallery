@@ -3,30 +3,28 @@ import {
   BaseEntity, CreateDateColumn, UpdateDateColumn
 } from 'typeorm'
 
-import { IVideoInfo } from '../interfaces/video-info.interface'
-
 import { Video } from './video.model'
 
 import { Opinion } from '../utils/opinion.enum'
 
 @Entity('video_info')
-export class VideoInfo extends BaseEntity implements IVideoInfo {
+export class VideoInfo extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
     id: string
 
-  @Column()
+  @Column({ type: 'varchar' })
     title: string
 
-  @Column()
+  @Column({ type: 'varchar' })
     description: string
 
   @Column({ type: 'enum', enum: Opinion, default: Opinion.UNDEFINED })
     opinion: Opinion
 
-  @Column()
+  @Column({ type: 'int', default: 0 })
     views: number
 
-  @Column({ type: 'simple-array' })
+  @Column({ type: 'simple-array', default: [] })
     tags: [string]
 
   @CreateDateColumn({ name: 'created_at' })
@@ -35,7 +33,7 @@ export class VideoInfo extends BaseEntity implements IVideoInfo {
   @UpdateDateColumn({ name: 'updated_at' })
     updatedAt: Date
 
-  @OneToOne(() => Video, video => video.videoInfo)
-  @JoinColumn({ name: 'video_id ' })
+  @OneToOne(() => Video, video => video.videoInfo, { cascade: true })
+  @JoinColumn({ name: 'video_id ', referencedColumnName: 'id' })
     video: Video
 }

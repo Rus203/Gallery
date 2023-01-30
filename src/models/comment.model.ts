@@ -4,17 +4,15 @@ import {
   JoinColumn, PrimaryGeneratedColumn
 } from 'typeorm'
 
-import { IComment } from '../interfaces/comments.interface'
-
 import { User } from './user.model'
 import { Video } from './video.model'
 
 @Entity('comments')
-export class Comment extends BaseEntity implements IComment {
+export class Comment extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
     id: string
 
-  @Column()
+  @Column({ type: 'varchar' })
     description: string
 
   @CreateDateColumn({ name: 'created_at' })
@@ -23,11 +21,11 @@ export class Comment extends BaseEntity implements IComment {
   @UpdateDateColumn({ name: 'updated_at' })
     updatedAt: Date
 
-  @ManyToOne(() => User, user => user.comments)
+  @ManyToOne(() => User, user => user.comments, { cascade: true })
   @JoinColumn({ name: 'user_id' })
     user: User
 
-  @ManyToOne(() => Video, video => video.comments)
+  @ManyToOne(() => Video, video => video.comments, { cascade: true })
   @JoinColumn({ name: 'video_id' })
     video: Video
 }

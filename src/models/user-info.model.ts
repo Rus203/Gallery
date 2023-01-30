@@ -3,22 +3,20 @@ import {
   BaseEntity, CreateDateColumn, UpdateDateColumn, JoinColumn
 } from 'typeorm'
 
-import { IUserInfo } from '../interfaces/user-info.interface'
-
 import { User } from './user.model'
 
 @Entity('user_info')
-export class UserInfo extends BaseEntity implements IUserInfo {
+export class UserInfo extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
     id: string
 
-  @Column()
+  @Column({ type: 'varchar' })
     description: string
 
-  @Column({ name: 'image_path' })
+  @Column({ type: 'varchar', name: 'image_path' })
     imagePath: string
 
-  @Column()
+  @Column({ type: 'varchar' })
     name: string
 
   @CreateDateColumn({ name: 'created_at' })
@@ -27,7 +25,7 @@ export class UserInfo extends BaseEntity implements IUserInfo {
   @UpdateDateColumn({ name: 'updated_at' })
     updatedAt: Date
 
-  @OneToOne(() => User, user => user.userInfo)
+  @OneToOne(() => User, user => user.userInfo, { cascade: true })
   @JoinColumn({ name: 'user_id' })
     user: User
 }
