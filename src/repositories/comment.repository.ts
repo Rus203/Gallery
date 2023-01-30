@@ -1,20 +1,20 @@
 import { Repository } from 'typeorm'
 
-import { Video } from '../models/video.model'
+import { Comment } from '../models/comment.model'
 import { AppDataSource } from '../database/data-source'
-import { IVideo } from '../interfaces/video.interface'
+import { IComment } from '../interfaces/comment.interface'
 
-class VideoRepository {
-  readonly rep: Repository<Video>
+class CommentRepository {
+  readonly rep: Repository<Comment>
   constructor () {
-    this.rep = AppDataSource.getRepository(Video)
+    this.rep = AppDataSource.getRepository(Comment)
   }
 
-  async get (parameters: object): Promise<Video[]> {
+  async get (parameters: object): Promise<Comment[]> {
     return await this.rep.findBy(parameters)
   }
 
-  async create (parameters: IVideo): Promise<Video> {
+  async create (parameters: IComment): Promise<Comment> {
     return await this.rep.create(parameters).save()
   }
 
@@ -27,4 +27,4 @@ class VideoRepository {
   }
 }
 
-export const videoRepository = new VideoRepository()
+export const commentRepository = new CommentRepository()
