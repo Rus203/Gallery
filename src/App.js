@@ -11,7 +11,6 @@ import SignUp from './pages/SignUp'
 import Feedback from './pages/Feedback'
 import Help from './pages/Help'
 import Home from './pages/Home'
-import Subscriptions from './pages/Subscriptions'
 import Settings from './pages/Settings'
 import Whoops from './pages/Whoops'
 
@@ -54,7 +53,7 @@ function App () {
                 <Route path='help' element={<Help />} />
                 <Route path='home' element={<Home />} />
                 <Route path='feedback'element={<Feedback />} />
-                <Route path='subscriptions' element={<Subscriptions />} />
+                <Route path='recommended' element={<Index />} />
                 <Route path='settings' element={<Settings /> } />
                 <Route path='/*' element={<Whoops /> } />
               </Route>

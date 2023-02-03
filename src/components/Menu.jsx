@@ -7,7 +7,7 @@ import { IoSettingsOutline as SettingsIcon } from 'react-icons/io5'
 import { RiFeedbackLine as FeedbackIcon } from 'react-icons/ri'
 import { FiHelpCircle as HelpIcon } from 'react-icons/fi'
 import { AiOutlineHome as HomeIcon } from 'react-icons/ai'
-import { MdOutlineSubscriptions as Subscriptions } from 'react-icons/md'
+import { MdOutlineSubscriptions as RecommendedIcon } from 'react-icons/md'
 
 const Container = styled.div`
   flex: 1;
@@ -90,10 +90,10 @@ const Menu = () => {
             Home
           </Item>
         </ItemLink>
-        <ItemLink to='/subscriptions'>
+        <ItemLink to='/'>
           <Item>
-            <Subscriptions />
-            Subscriptions
+            <RecommendedIcon />
+            Recommended
           </Item>
         </ItemLink>
         <ItemLink to='/settings'>

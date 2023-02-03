@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import { format } from 'timeago.js'
 
 const Container = styled.div`
   width: ${({ type }) => type !== 'sm' && '230px'};
@@ -71,9 +72,9 @@ const Card = ({ type }) => {
             alt='channel image'
             />
           <Text>
-            <Title>Test video</Title>
+            <Title>cat in the boots</Title>
             <ChanelName>The cat in boots</ChanelName>
-            <Info>100,528K views · a day ago</Info>
+            <Info>10k views · 1 day ago</Info>
           </Text>
         </Details>
       </Container>
@@ -82,7 +83,8 @@ const Card = ({ type }) => {
 }
 
 Card.propTypes = {
-  type: PropTypes.string
+  type: PropTypes.string,
+  video: PropTypes.object
 }
 
 export default Card
